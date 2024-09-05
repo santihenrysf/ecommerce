@@ -1,0 +1,44 @@
+{
+  "$schema": "https://wixplosives.github.io/codux-config-schema/codux.config.schema.json",
+  "boardGlobalSetup": "./_codux/boards-global-setup.ts",
+  "componentsDiscovery": {
+    "include": ["src/**"],
+    "exclude": ["_codux/**"]
+  },
+  "newComponent": {
+    "componentsPath": "src/components",
+    "templatesPath": "_codux/component-templates"
+  },
+  "boardsPath": "_codux/boards/components",
+  "safeRender": {
+    "maxInstancesPerComponent": 1000
+  },
+  "scripts": {
+    "install": {
+      "title": "Install",
+      "description": "Run install",
+      "command": "npm i",
+      "trigger": ["checkout", "pull", "setup"]
+    }
+  },
+  "styling": {
+    "solution": "scss modules"
+  },
+  "styleFilesConfig": {
+    "commonStyleFilePattern": "**/common-styles.module.scss"
+  },
+  "resolve": {
+    "alias": {
+      "@styles": "./src/styles",
+      "@styles/*": "./src/styles/*",
+      "/*": "./*",
+      "~/*": "./src/*"
+    }
+  },
+  "svgLoader": "both",
+  "previewConfiguration": {
+    "environmentVariables": {
+      "WIX_CLIENT_ID": "0c9d1ef9-f496-4149-b246-75a2514b8c99"
+    }
+  }
+}
